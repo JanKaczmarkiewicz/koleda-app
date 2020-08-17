@@ -1,0 +1,7 @@
+[0816/160247.727:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Janek\AppData\Local\Microsoft\Edge Dev\User Data\Crashpad\attachments\41ac5f3b-fa27-4a95-89ed-049a1d387b04: System nie mo¿e odnaleŸæ okreœlonej œcie¿ki. (0x3)
+[0816/160247.729:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Janek\AppData\Local\Microsoft\Edge Dev\User Data\Crashpad\attachments\6281de33-78f8-460c-b53b-a09acefe5fe2: System nie mo¿e odnaleŸæ okreœlonej œcie¿ki. (0x3)
+[0816/160247.730:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Janek\AppData\Local\Microsoft\Edge Dev\User Data\Crashpad\attachments\6487723a-ac9a-4f40-aa67-a897014e0641: System nie mo¿e odnaleŸæ okreœlonej œcie¿ki. (0x3)
+[0816/160247.730:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Janek\AppData\Local\Microsoft\Edge Dev\User Data\Crashpad\attachments\7db966cc-d689-4160-be14-bbd647dca6c2: System nie mo¿e odnaleŸæ okreœlonej œcie¿ki. (0x3)
+[0816/160247.731:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Janek\AppData\Local\Microsoft\Edge Dev\User Data\Crashpad\attachments\95cf51ad-c724-438a-943d-738f606a3697: System nie mo¿e odnaleŸæ okreœlonej œcie¿ki. (0x3)
+[0816/160247.732:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Janek\AppData\Local\Microsoft\Edge Dev\User Data\Crashpad\attachments\da4e8ff4-1f9f-4349-af8d-b7d577493a0b: System nie mo¿e odnaleŸæ okreœlonej œcie¿ki. (0x3)
+[0816/160247.732:ERROR:directory_reader_win.cc(43)] FindFirstFile: System nie mo¿e odnaleŸæ okreœlonej œcie¿ki. (0x3)
