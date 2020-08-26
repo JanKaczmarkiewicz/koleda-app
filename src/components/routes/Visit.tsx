@@ -19,7 +19,6 @@ import {
 import { splitByLabel } from "../../utils/splitByLabel";
 import { renderStateListIcon } from "./renderStateListIcon";
 import Container from "../layout/Container";
-import { Text } from "react-native";
 import ModalBase from "../layout/ModalBase";
 
 type VisitScreenRouteProp = RouteProp<RootStackParamList, "Visit">;

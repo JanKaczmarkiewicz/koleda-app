@@ -5,7 +5,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "gen": "apollo codegen:generate --excludes=node_modules/* --includes=**/*.tsx --endpoint http://localhost:3001 --target typescript --tagName gql --outputFlat src/generated --no-addTypename"
   },
   "dependencies": {
     "@apollo/client": "^3.1.3",
