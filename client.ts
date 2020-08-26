@@ -2,13 +2,14 @@ import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 import { setContext } from "@apollo/client/link/context";
 import { createHttpLink } from "@apollo/react-hooks";
+import { storage } from "@koleda/common-utils";
 
 const httpLink = createHttpLink({
-  uri: "http://localhost:3001/",
+  uri: "http://localhost:3001",
 });
 
-const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem("token");
+const authLink = setContext(async (_, { headers }) => {
+  const token = await storage.getItem("token");
   return {
     headers: {
       ...headers,

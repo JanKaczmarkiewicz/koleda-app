@@ -1,21 +1,49 @@
 import React from "react";
-import { Surface } from "react-native-paper";
-import { Text } from "react-native";
 import { useQuery, gql } from "@apollo/react-hooks";
+import Container from "../layout/Container";
+import { FlatList, View, Text, TouchableOpacity } from "react-native";
+import { AcolytePastoralVisits } from "../../generated/AcolytePastoralVisits";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { RootStackParamList } from "./LoggedApp";
 
 const ACOLYTE_PASTORAL_VISTIS = gql`
-  query AcolytePastoralVisits($input: String!) {
-    pastoralVisits
+  query AcolytePastoralVisits {
+    pastoralVisits {
+      id
+      hour
+    }
   }
 `;
 
-const Main: React.FC = () => {
-  const { loading, error, data } = useQuery<I>();
+type MainScreenNavigationProp = StackNavigationProp<RootStackParamList, "Home">;
 
-  if (loading || !data) return <div>loading...</div>;
-  if (error) return <div>error</div>;
+type Props = {
+  navigation: MainScreenNavigationProp;
+};
 
-  return <></>;
+const Main: React.FC<Props> = ({ navigation }) => {
+  const { loading, error, data } = useQuery<AcolytePastoralVisits>(
+    ACOLYTE_PASTORAL_VISTIS
+  );
+
+  if (loading) return <div>loading...</div>;
+  if (error || !data || !data.pastoralVisits) return <div>error</div>;
+
+  return (
+    <Container>
+      <FlatList
+        data={data.pastoralVisits}
+        renderItem={({ item: { id, hour } }) => (
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Visit", { visitId: id })}
+          >
+            <Text>{id}</Text>
+            <Text>{hour}</Text>
+          </TouchableOpacity>
+        )}
+      />
+    </Container>
+  );
 };
 
 export default Main;

@@ -1,6 +1,6 @@
 import React from "react";
 import UnloggedHeader from "../headers/UnloggedHeader";
-import LoginForm from "./LoginForm";
+import Login from "./Login";
 
 interface Props {}
 
@@ -8,7 +8,7 @@ const UnloggedApp: React.FC<Props> = (props) => {
   return (
     <>
       <UnloggedHeader />
-      <LoginForm />
+      <Login />
     </>
   );
 };
