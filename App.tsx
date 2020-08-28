@@ -1,8 +1,10 @@
 import React from "react";
 import { Provider as PaperProvider } from "react-native-paper";
 import LoginCheck from "./src/components/routes/LoginCheck";
-import { AuthProvider, client } from "@koleda/common-context";
+import { context } from "@koleda/common";
 import { ApolloProvider } from "@apollo/client";
+
+const { AuthProvider, client } = context;
 
 export default function App() {
   return (

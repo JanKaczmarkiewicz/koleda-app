@@ -1,7 +1,9 @@
 import React from "react";
 import BaseHeader from "./BaseHeader";
 import { Appbar } from "react-native-paper";
-import { useAuthContext } from "@koleda/common-context";
+import { context } from "@koleda/common";
+
+const { useAuthContext } = context;
 
 const LoggedHeader: React.FC = () => {
   const { logout } = useAuthContext();

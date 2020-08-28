@@ -1,5 +1,5 @@
 import React from "react";
-import { Me_me } from "../../generated/Me";
+import { Me_me } from "@koleda/common/dist/generated/Me";
 import LoggedHeader from "../headers/LoggedHeader";
 import Main from "./Main";
 

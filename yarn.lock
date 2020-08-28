@@ -1078,6 +1078,13 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@egjs/hammerjs@^2.0.17":
+  version "2.0.17"
+  resolved "https://registry.yarnpkg.com/@egjs/hammerjs/-/hammerjs-2.0.17.tgz#5dc02af75a6a06e4c2db0202cae38c9263895124"
+  integrity sha512-XQsZgjm2EcVUiZQf11UBJQfmZeEmOW8DpI1gsFeln6w0ae0ii4dMQEQ0kjl6DspdWX1aGY1/loyXnP0JS06e/A==
+  dependencies:
+    "@types/hammerjs" "^2.0.36"
+
 "@endemolshinegroup/cosmiconfig-typescript-loader@^1.0.0":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@endemolshinegroup/cosmiconfig-typescript-loader/-/cosmiconfig-typescript-loader-1.0.2.tgz#c1eadbb4c269f7898195ca8f7428bf5f5d1c449a"
@@ -1209,23 +1216,23 @@
     "@types/yargs" "^15.0.0"
     chalk "^3.0.0"
 
-"@koleda/common-context@^1.0.11":
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/@koleda/common-context/-/common-context-1.0.11.tgz#94f5cc3a2bdaa0a6fb1df475a205db7ef335bb7f"
-  integrity sha512-3T1BpZ3vc9GM9AwdG3ff+95trvo9Lpr+k1NcuOgdBW91tZdA0IUL2HfM3sNOiRvHUXYIn8iAWiV2L3Y+mUjtJQ==
-  dependencies:
-    "@apollo/client" "^3.1.3"
-    "@apollo/react-hooks" "^4.0.0"
-    "@koleda/common-utils" "^1.0.5"
-    apollo "^2.30.2"
-
-"@koleda/common-utils@^1.0.4", "@koleda/common-utils@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@koleda/common-utils/-/common-utils-1.0.5.tgz#061fa2b417edce342bd0e17209f19659a402d7d3"
-  integrity sha512-ODxuE1dnBbjXTgAlJPOM526b5vAe2Zb+enWCu1bjA1AiiX41oJ1W2cEKoMx+TYhSE1NYz9DQ7pMjEMMCjGaa0Q==
+"@koleda/common-utils@^1.0.4", "@koleda/common-utils@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@koleda/common-utils/-/common-utils-1.1.1.tgz#283ffb1753fac025cdcaf99f697703302c5b8003"
+  integrity sha512-2rESak5fZBoMjQHtwemQQq7R0jiYkEtyEp1ox+ydkmqr/Qu1CMXEfK18S0XRnaxjHx3TX7SLT8Mpm9ECOi7dcg==
   dependencies:
     "@koleda/common-utils" "^1.0.4"
     "@react-native-community/async-storage" "^1.12.0"
+
+"@koleda/common@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@koleda/common/-/common-2.1.1.tgz#776f3b8fcbfefe328c94684a93a1902dc6f762cf"
+  integrity sha512-uR8EDMBeYOvEtZnADZMQ4vx1F7W4ecpfpMUaie8ncD8yLCBAYBcZ9hjjQ8237AIrDM42h1BP7E4K2OL47o9s/w==
+  dependencies:
+    "@apollo/client" "^3.1.3"
+    "@apollo/react-hooks" "^4.0.0"
+    "@koleda/common-utils" "^1.1.1"
+    apollo "^2.30.2"
 
 "@nodelib/fs.scandir@2.1.3":
   version "2.1.3"
@@ -1589,6 +1596,11 @@
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
   integrity sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
+
+"@types/hammerjs@^2.0.36":
+  version "2.0.36"
+  resolved "https://registry.yarnpkg.com/@types/hammerjs/-/hammerjs-2.0.36.tgz#17ce0a235e9ffbcdcdf5095646b374c2bf615a4c"
+  integrity sha512-7TUK/k2/QGpEAv/BCwSHlYu3NXZhQ9ZwBYpzr9tjlPIL2C5BeGhH3DmVavRx3ZNyELX5TLC91JTz/cen6AAtIQ==
 
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0":
   version "2.0.3"
@@ -6034,6 +6046,16 @@ react-native-appearance@~0.3.3:
     invariant "^2.2.4"
     use-subscription "^1.0.0"
 
+react-native-gesture-handler@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.7.0.tgz#0ef74a5ba836832e497dc49eb1ce58baa6c617e5"
+  integrity sha512-1CrjJf8Z6Iz2XWzfZknYtsm2sud5Lu/pLhhokkgBIKttxqGDtetDEVFDJOTJWJyKCrUPk0X5tnWi/diSF4q++w==
+  dependencies:
+    "@egjs/hammerjs" "^2.0.17"
+    hoist-non-react-statics "^2.3.1"
+    invariant "^2.2.4"
+    prop-types "^15.7.2"
+
 react-native-iphone-x-helper@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.2.1.tgz#645e2ffbbb49e80844bb4cbbe34a126fda1e6772"
@@ -6059,6 +6081,11 @@ react-native-safe-area-view@^0.14.9:
   integrity sha512-WII/ulhpVyL/qbYb7vydq7dJAfZRBcEhg4/UWt6F6nAKpLa3gAceMOxBxI914ppwSP/TdUsandFy6lkJQE0z4A==
   dependencies:
     hoist-non-react-statics "^2.3.1"
+
+react-native-screens@^2.10.1:
+  version "2.10.1"
+  resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-2.10.1.tgz#06d22fae87ef0ce51c616c34a199726db1403b95"
+  integrity sha512-Z2kKSk4AwWRQNCBmTjViuBQK0/Lx0jc25TZptn/2gKYUCOuVRvCekoA26u0Tsb3BIQ8tWDsZW14OwDlFUXW1aw==
 
 react-native-web@~0.11.7:
   version "0.11.7"

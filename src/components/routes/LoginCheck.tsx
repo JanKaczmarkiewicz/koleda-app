@@ -1,7 +1,9 @@
 import React from "react";
-import { useAuthContext } from "@koleda/common-context";
+import { context } from "@koleda/common";
 import LoggedApp from "./LoggedApp";
 import UnloggedApp from "./UnloggedApp";
+
+const { useAuthContext } = context;
 
 const LoginCheck = () => {
   const { me } = useAuthContext();
