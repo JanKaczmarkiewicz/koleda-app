@@ -3,7 +3,7 @@ import { RecordState } from "../../generated/globalTypes";
 import { List, Colors, shadow } from "react-native-paper";
 import { IconSource } from "react-native-paper/lib/typescript/src/components/Icon";
 
-const stateToIcon: {
+export const stateToIcon: {
   [key in keyof typeof RecordState]: { color: string; icon: IconSource };
 } = {
   ACCEPTED: {
