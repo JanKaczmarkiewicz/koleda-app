@@ -75,51 +75,28 @@ const UpdateEntranceModal: React.FC<Props> = ({
       ...entrance,
       ...variables.input,
     };
+
     onUpdate(newEntrance);
     onDismiss();
   };
 
-  const onToggleSwitch = () =>
-    handleCommentChange(isCommentDisabled ? "" : null);
-
-  const isCommentDisabled = input.comment === null;
   const houseNumber = house?.number || "";
   const streetName = house?.street?.name || "";
   const commentText = input.comment || "";
 
   return (
     <ModalBase visible onDismiss={onDismiss}>
-      <Title>Edytuj</Title>
-      <Subheading>
+      <Title>
         {houseNumber} {streetName}
-      </Subheading>
+      </Title>
 
+      <TextInput
+        value={commentText}
+        dense
+        label={"Komentarz"}
+        onChangeText={(text) => handleCommentChange(text)}
+      />
       <ButtonStateGroup onPress={handleStateChange} state={input.state} />
-
-      <View
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          flexDirection: "row",
-        }}
-      >
-        <View
-          style={{
-            display: "flex",
-            flexDirection: "row",
-          }}
-        >
-          <Subheading>Komentarz</Subheading>
-          <Switch value={!isCommentDisabled} onValueChange={onToggleSwitch} />
-        </View>
-        {!isCommentDisabled && (
-          <TextInput
-            value={commentText}
-            dense
-            onChangeText={(text) => handleCommentChange(text)}
-          />
-        )}
-      </View>
 
       <Button onPress={handleSubmit}>Zatwierdz</Button>
     </ModalBase>

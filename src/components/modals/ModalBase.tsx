@@ -23,7 +23,7 @@ const ModalBase: React.FC<Props> = ({ onDismiss, children, visible }) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: 400,
+    width: "80%",
     margin: "auto",
   },
   paper: {
