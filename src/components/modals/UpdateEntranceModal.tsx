@@ -15,7 +15,6 @@ import {
   UpdateEntrance,
   UpdateEntranceVariables,
 } from "../../generated/UpdateEntrance";
-import { View } from "react-native";
 
 type Props = {
   entrance: Entrance;
