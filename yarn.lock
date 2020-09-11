@@ -1216,22 +1216,14 @@
     "@types/yargs" "^15.0.0"
     chalk "^3.0.0"
 
-"@koleda/common-utils@^1.0.4", "@koleda/common-utils@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@koleda/common-utils/-/common-utils-1.1.1.tgz#283ffb1753fac025cdcaf99f697703302c5b8003"
-  integrity sha512-2rESak5fZBoMjQHtwemQQq7R0jiYkEtyEp1ox+ydkmqr/Qu1CMXEfK18S0XRnaxjHx3TX7SLT8Mpm9ECOi7dcg==
-  dependencies:
-    "@koleda/common-utils" "^1.0.4"
-    "@react-native-community/async-storage" "^1.12.0"
-
-"@koleda/common@^2.3.6":
-  version "2.3.6"
-  resolved "https://registry.yarnpkg.com/@koleda/common/-/common-2.3.6.tgz#c365be62ca0c5532c530f5f5bc9da30a5de8d63f"
-  integrity sha512-uuJW3Rw3AbksYHc6ZQpgpkTghF9efML45KhxDuVJMB3vMooglsWxhqLOjz2arvtkRtTmEMBAl3DqXlmh4p1ASw==
+"@koleda/common@^2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@koleda/common/-/common-2.5.0.tgz#b8115f6c7f75d0b97f36f86193da12cee9dcea17"
+  integrity sha512-xJJjBxkHrvs8leNBqjf1etXJbFabV+BUw5gxgwdLKvxYmyriAZeKdKVYakYknD0mPj7ei8iWD9iLMmuI4MGrEg==
   dependencies:
     "@apollo/client" "^3.1.3"
     "@apollo/react-hooks" "^4.0.0"
-    "@koleda/common-utils" "^1.1.1"
+    "@react-native-community/async-storage" "^1.12.0"
     apollo "^2.30.2"
     subscriptions-transport-ws "^0.9.18"
 
