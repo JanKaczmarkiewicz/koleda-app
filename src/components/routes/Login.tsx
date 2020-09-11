@@ -1,11 +1,9 @@
 import React, { memo, useState } from "react";
 import { StyleSheet, Text } from "react-native";
 import { Button } from "react-native-paper";
-import { context } from "@koleda/common";
+import { useAuthContext } from "@koleda/common";
 import Container from "../layout/Container";
 import TextInput from "../inputs/TextInput";
-
-const { useAuthContext } = context;
 
 const LoginScreen = () => {
   const { login } = useAuthContext();

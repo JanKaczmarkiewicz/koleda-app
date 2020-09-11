@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/react-hooks";
 import Container from "../layout/Container";
-import { FlatList, View, Text, TouchableOpacity } from "react-native";
+import { FlatList, Text, TouchableOpacity } from "react-native";
 import { AcolytePastoralVisits } from "../../generated/AcolytePastoralVisits";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamList } from "./LoggedApp";

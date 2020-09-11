@@ -1,24 +1,103 @@
-import React from "react";
+import React, { useState } from "react";
 import { Entrance } from "../routes/Visit";
 import ModalBase from "./ModalBase";
-import { Title, Subheading, TextInput, Button } from "react-native-paper";
+import {
+  Title,
+  Subheading,
+  Button,
+  TextInput,
+  Switch,
+} from "react-native-paper";
+import { RecordState } from "@koleda/common/dist/generated/globalTypes";
+import ButtonStateGroup from "../routes/ButtonStateGroup";
+import { useMutation, gql } from "@apollo/client";
+import {
+  UpdateEntrance,
+  UpdateEntranceVariables,
+} from "../../generated/UpdateEntrance";
 
-interface Props {
+type Props = {
   entrance: Entrance;
   onDismiss: () => void;
-}
+  onUpdate: (entrance: Entrance) => void;
+};
 
-const UpdateEntranceModal: React.FC<Props> = ({ entrance, onDismiss }) => {
-  const { house } = entrance;
+type UpdateEntanceState = {
+  state: RecordState;
+  comment: string | null;
+};
+
+const UPDATE_ENTRANCE = gql`
+  mutation UpdateEntrance($input: UpdateEntranceInput!) {
+    updateEntrance(input: $input) {
+      id
+    }
+  }
+`;
+
+const UpdateEntranceModal: React.FC<Props> = ({
+  entrance,
+  onDismiss,
+  onUpdate,
+}) => {
+  const { house, visitState, comment } = entrance;
+
+  const [updateEntrance] = useMutation<UpdateEntrance, UpdateEntranceVariables>(
+    UPDATE_ENTRANCE
+  );
+
+  const [input, setInput] = useState<UpdateEntanceState>({
+    state: visitState,
+    comment,
+  });
+
+  const handleStateChange = (state: RecordState) =>
+    setInput({ ...input, state });
+
+  const handleCommentChange = (comment: string | null) =>
+    setInput({ ...input, comment });
+
+  const handleSubmit = () => {
+    const variables = {
+      input: {
+        id: entrance.id,
+        comment: input.comment,
+        ["visitState"]: input.state,
+      },
+    };
+
+    updateEntrance({
+      variables,
+    });
+
+    const newEntrance = {
+      ...entrance,
+      ...variables.input,
+    };
+
+    onUpdate(newEntrance);
+    onDismiss();
+  };
+
+  const houseNumber = house?.number || "";
+  const streetName = house?.street?.name || "";
+  const commentText = input.comment || "";
 
   return (
     <ModalBase visible onDismiss={onDismiss}>
-      <Title>Edytuj</Title>
-      <Subheading>
-        {house?.number || ""} {house?.street?.name || ""}
-      </Subheading>
+      <Title>
+        {houseNumber} {streetName}
+      </Title>
 
-      <Button onPress={onDismiss}>Zatwierdz</Button>
+      <TextInput
+        value={commentText}
+        dense
+        label={"Komentarz"}
+        onChangeText={(text) => handleCommentChange(text)}
+      />
+      <ButtonStateGroup onPress={handleStateChange} state={input.state} />
+
+      <Button onPress={handleSubmit}>Zatwierdz</Button>
     </ModalBase>
   );
 };
