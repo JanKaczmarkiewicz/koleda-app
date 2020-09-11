@@ -5,6 +5,7 @@ import UnloggedApp from "./UnloggedApp";
 
 const LoginCheck = () => {
   const { me } = useAuthContext();
+
   return me ? <LoggedApp me={me} /> : <UnloggedApp />;
 };
 

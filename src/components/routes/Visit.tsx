@@ -1,5 +1,5 @@
-import React, { Fragment, useState } from "react";
-import { gql, useSubscription } from "@apollo/client";
+import React, { useState } from "react";
+import { gql } from "@apollo/client";
 import { useQuery } from "@apollo/react-hooks";
 
 import { RootStackParamList } from "./LoggedApp";
@@ -110,6 +110,8 @@ const Visit: React.FC<Props> = ({ route }) => {
     ({ house }) => house?.street?.name
   );
 
+  const priestSlug = `Ksiądz: ${priest ? priest.username : "nieznany"}`;
+
   return (
     <>
       {editedEntrance && (
@@ -120,7 +122,7 @@ const Visit: React.FC<Props> = ({ route }) => {
         />
       )}
       <Container>
-        <Title>Ksiądz: {priest ? priest.username : "nieznany"}</Title>
+        <Title>{priestSlug}</Title>
 
         {acolytes.map(({ id, username }) => (
           <Caption key={id}>{username}</Caption>

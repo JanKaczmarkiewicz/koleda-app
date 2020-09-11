@@ -6,6 +6,7 @@ import Main from "./Main";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Visit from "./Visit";
+import { SeasonProvider } from "@koleda/common";
 
 const Stack = createStackNavigator();
 
@@ -23,7 +24,7 @@ const RootStack = createStackNavigator<RootStackParamList>();
 
 const LoggedApp: React.FC<Props> = (props) => {
   return (
-    <>
+    <SeasonProvider>
       <LoggedHeader />
 
       <NavigationContainer>
@@ -32,7 +33,7 @@ const LoggedApp: React.FC<Props> = (props) => {
           <RootStack.Screen name="Visit" component={Visit} />
         </RootStack.Navigator>
       </NavigationContainer>
-    </>
+    </SeasonProvider>
   );
 };
 
