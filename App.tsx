@@ -4,6 +4,10 @@ import LoginCheck from "./src/components/routes/LoginCheck";
 import { AuthProvider, client } from "@koleda/common";
 import { ApolloProvider } from "@apollo/client";
 
+if (__DEV__) {
+  import("./ReactotronConfig");
+}
+
 export default function App() {
   return (
     <ApolloProvider client={client}>
