@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-around",
-    paddingVertical: "20px",
+    paddingVertical: 20,
   },
 });
 
