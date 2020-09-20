@@ -1,6 +1,8 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/react-hooks";
 import Container from "../layout/Container";
+
+import { Text } from "react-native";
 import { FlatList, TouchableOpacity } from "react-native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamList } from "./LoggedApp";
@@ -35,6 +37,8 @@ const ACOLYTE_ACTIVE_DAYS = gql`
 
 type MainScreenNavigationProp = StackNavigationProp<RootStackParamList, "Home">;
 
+const todaysDate = new Date().toISOString();
+const futureDate = new Date(new Date().getTime() + 900000000000).toISOString();
 type Props = {
   navigation: MainScreenNavigationProp;
 };
@@ -42,9 +46,6 @@ type Props = {
 const Main: React.FC<Props> = ({ navigation }) => {
   const { me } = useAuthContext();
   const { currentSeason } = useSeasonContext();
-
-  const todaysDate = new Date().toLocaleDateString();
-  const futureDate = new Date("10.12.2030").toISOString();
 
   const { loading, error, data } = useQuery<
     AcolyteActiveDays,
@@ -60,8 +61,8 @@ const Main: React.FC<Props> = ({ navigation }) => {
     },
   });
 
-  if (loading) return <div>loading...</div>;
-  if (error || !data || !data.days) return <div>error</div>;
+  if (loading) return <Text>loading..</Text>;
+  if (error || !data || !data.days) return <Text>error</Text>;
 
   const days = data.days.filter(
     ({ pastoralVisits }) => pastoralVisits.length > 0

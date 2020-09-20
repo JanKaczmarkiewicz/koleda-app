@@ -18,7 +18,7 @@ import {
   AcolytePastoralVisitVariables,
 } from "../../generated/AcolytePastoralVisit";
 
-import { FlatList } from "react-native";
+import { FlatList, Text } from "react-native";
 import StreetEntrancesGroup from "./StreetEntrancesGroup";
 
 type VisitScreenRouteProp = RouteProp<RootStackParamList, "Visit">;
@@ -96,8 +96,8 @@ const Visit: React.FC<Props> = ({ route }) => {
     });
   };
 
-  if (loading) return <div>loading...</div>;
-  if (error || !data || !data.pastoralVisit) return <div>error</div>;
+  if (loading) return <Text>loading...</Text>;
+  if (error || !data || !data.pastoralVisit) return <Text>error</Text>;
 
   const showModal = (entrance: Entrance) => setEditedEntrance(entrance);
 
